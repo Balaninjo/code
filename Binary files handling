@@ -1,0 +1,13 @@
+"""binary_files_handling."""
+import binascii
+dir = C:/Users/Admin/Desktop/random_files_without_extension/random_files/file
+counter = 10
+while counter < 200:
+    with open(dir + str(counter), "rb") as f:
+        line = f.read(7)
+    if str(binascii.hexlify(line))[2:6] == "ffd8":
+        print(f"File{counter} is a .JPEG file.")
+        counter += 1
+    else:
+        print(f"File{counter} is not a .JPEG file.")
+        counter += 1
